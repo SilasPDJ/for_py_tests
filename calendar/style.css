@@ -1,0 +1,40 @@
+body {
+    background: #ccc;
+    transition: 3s;
+
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+    /*
+    http://sergiolopes.org/css-box-sizing-border-box/
+    https://www.bitdegree.org/learn/css-box-sizing#without-the-box-sizing 
+    */
+}
+
+main {
+
+    margin-left: 25%;
+    margin-top: 5%;
+    width: 50%;
+    text-align: center;
+}
+
+.calendar-container {
+    font-size: 25px;
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto auto;
+}
+
+.calendar-weekdays,
+.calendar-dates {
+    display: contents;
+}
+
+.calendar-date {
+    background-color: lightskyblue;
+    margin: 5px;
+    padding: 10px;
+}
