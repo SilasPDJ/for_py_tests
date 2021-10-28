@@ -4,28 +4,32 @@ body {
 
 }
 
-*,
-*:before,
-*:after {
-    box-sizing: border-box;
-    /*
-    http://sergiolopes.org/css-box-sizing-border-box/
-    https://www.bitdegree.org/learn/css-box-sizing#without-the-box-sizing 
-    */
-}
+
 
 main {
-
-    margin-left: 25%;
-    margin-top: 5%;
-    width: 50%;
-    text-align: center;
+    margin-top: 10%;
+    display: flex;
+    /* flex-wrap: wrap; */
 }
 
+main>div {
+    padding: 20px;
+    width: 50%;
+}
+
+
+
+
 .calendar-container {
+    background-color: white;
     font-size: 25px;
     display: grid;
-    grid-template-columns: auto auto auto auto auto auto auto;
+    grid-template-columns: repeat(7, 1fr);
+    grid-auto-rows: minmax(50px, auto);
+
+    gap: 10px;
+    border-radius: 1px;
+    border: 5px dotted black;
 }
 
 .calendar-weekdays,
@@ -34,7 +38,31 @@ main {
 }
 
 .calendar-date {
-    background-color: lightskyblue;
-    margin: 5px;
-    padding: 10px;
+
+    text-align: center;
+    background-color: lavender;
+    /* padding: 10px; */
+}
+
+select {
+    border: 5px;
+    border-style: groove;
+    border-radius: 10%;
+    /* width: 9rem; */
+    height: 3rem;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 800;
+
+}
+
+.calendar-specifications {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    /* grid-template-rows: auto auto; */
+}
+
+.calendar-specifications select {
+    flex: 1;
 }
