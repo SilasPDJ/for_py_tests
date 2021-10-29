@@ -12,29 +12,30 @@
 
 <body>
     <h1>Calendário</h1>
-    <main>
-
-
-        <div class="calendar-container" id="calendarContainer">
-            <div class="calendar-weekdays">
-
+    <header>
+        <div class="calendar-buttons">
+            <div id="calendarBts">
+                <button>NEXT</button>
+                <button>PREVIOUS</button>
             </div>
-            <div class="calendar-dates">
-                <div class="calendar-date"></div>
-            </div>
-
         </div>
 
-        <div class="calendar-specifications">
+
+        <div class="calendar-selects">
             <select name="" id="selectMonth" class="myDates">
             </select>
             <select name="" id="selectYear" class="myDates">
             </select>
         </div>
 
-    </main>
+    </header>
+    <div class="calendar-container" id="calendarContainer">
+
+        <div class="calendar-date"></div>
+    </div>
 
     <script src="app.js" type="module"></script>
+    <script src="appClass.js" type="module"></script>
 </body>
 
 </html>
