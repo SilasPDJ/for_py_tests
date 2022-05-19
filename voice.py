@@ -1,8 +1,3 @@
-from gtts import gTTS
-import os
-mytext = 'a b c d e'
-language = 'en'
-myobj = gTTS(mytext, lang=language, slow=False)
-
-myobj.save('welcome.mp3')
-os.system("welcome.mp3")
+import folium
+map = folium.Map(location=[32.401867, -111.112322])
+map.save("my_record/map1.html")
