@@ -2,7 +2,8 @@ from prime_nums import get_prime_nums, is_prime
 from numpy import prod
 
 
-def get_mdc(*nums):
+def get_gcd(*nums):
+    # MDC
     def same_divisor(prmn) -> bool:
         # prmn = prime_num
         if not is_prime(prmn):
@@ -24,5 +25,5 @@ def get_mdc(*nums):
     return prod(mults)
 
 
-a = get_mdc(44, 88, 264)
+a = get_gcd(33, 99, 66)
 print(a)
