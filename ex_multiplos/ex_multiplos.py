@@ -60,4 +60,4 @@ user_nums = eval(input('Digite os N: '))
 the_mmc = get_mmc(
     *user_nums) if hasattr(user_nums, '__iter__') else get_mmc(user_nums)
 
-# print(the_mmc)
+print(the_mmc)
