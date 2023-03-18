@@ -49,14 +49,14 @@ class Backend(ColorConverterB):
 
     def init_main(self, e=None):
 
-        COLORS = {"ZERAR": '#ffffff',
+        COLORS = {"ZERAR": '#808080',  # em vez de #ffffff
                   "COMPRAR": '#119850', "VENDER": '#cc3030'}
         TO_READ = self.STRUCTURE["HISTOGRAMA_POSITION"]
 
-        op_atual_cont = {"COMPRAR": 0, "VENDER": 0}
+        # op_atual_cont = {"COMPRAR": 0, "VENDER": 0}
 
         QTD_P_OPERAR = 2
-
+        operacoes = []
         # logical system
 
         while True:
@@ -69,31 +69,22 @@ class Backend(ColorConverterB):
             for op_name, c in COLORS.items():
                 if c.upper() == now_color.upper():
                     to_click = self.STRUCTURE[op_name]
-                    if op_name in op_atual_cont:
-                        op_atual_cont[op_name] += 1
-                        if op_name == "COMPRAR":
-                            __op_name = op_name
-                            op_atual_cont["VENDER"] = 0
-                            break
-                        else:
-                            __op_name = op_name
-                            op_atual_cont["COMPRAR"] = 0
-                            break
+                    __op_name = op_name
 
+                    operacoes.append(__op_name)
             if to_click is not None:
                 print(to_click)
 
-            if __op_name in op_atual_cont:
-                print(op_atual_cont[__op_name],
-                      op_atual_cont[__op_name] <= QTD_P_OPERAR)
-                if op_atual_cont[__op_name] <= QTD_P_OPERAR:
-                    # pygui.click(to_click)
-                    pass
-            else:
-                pass
-            pygui.click(to_click)
+            if len(operacoes) <= 1:
+                pygui.click(to_click)
+            elif operacoes[-1] != operacoes[-2]:
+                if operacoes[-1] != "ZERAR":  # p nzerar
+                    pygui.click(to_click)
+                    # operacoes.clear()
+                else:
+                    operacoes.pop()
 
-            self.timer_helper()
+            self.timer_helper(seconds=1)
             # TODO: COMO??????? definir variável para ver se está posicionado ou não
             # TODO: calcular tempo com base no relógio
             # PRINT SCREEN DA REGIÃO DE ALTURA PROCURAR POR LINHA AMARELA?????????????????
