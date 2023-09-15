@@ -5,7 +5,10 @@ from sys import argv
 def frase(*frases):
     total = []
     for f in frases[-1::-1]:
+
         total.append("".join([_ for _ in f[-1::-1]]))
+        # total.append("".join([_ for _ in f[::2]+f[1::2]]))
+
     return " ".join(total)
 
 

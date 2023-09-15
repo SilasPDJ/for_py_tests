@@ -3,12 +3,12 @@ import os
 # pdfs = ['file1.pdf', 'file2.pdf', 'file3.pdf', 'file4.pdf'][:2]
 # pdfs = ['pt0.pdf', 'pt1.pdf', 'pt2.pdf', 'pt3.pdf']
 
-path = f'O:\OneDrive\DEUS_ME_DARA_EM_DOBRO\ADMSBC'
+path = r'O:\OneDrive\_FISCAL-2021\2023\07-2023\MICHELE SENA DE JESUS\adventista\JUNTOS'
 
 files = [os.path.join(path, file)
          for file in os.listdir(path) if file.endswith('pdf')]
 
-files.sort()
+files.sort(reverse=True)
 
 input(files)
 merger = PdfFileMerger()
