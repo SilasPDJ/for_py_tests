@@ -8,7 +8,8 @@ path = input("Digite o caminho: ")
 files = [os.path.join(path, file)
          for file in os.listdir(path) if file.endswith('pdf')]
 
-files.sort(reverse=True)
+# files.sort(reverse=True)
+files.sort(reverse=False)
 
 input(files)
 merger = PdfFileMerger()
