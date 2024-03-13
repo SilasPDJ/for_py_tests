@@ -28,7 +28,7 @@ segundos = [calcular_segundos(*tempo) for tempo in tempos]
 print("Totais de segundos individuais:", segundos)
 
 
-main_video_path = r"O:\OneDrive\Área de Trabalho\believe-fiao\recorte\DVD-2.mp4"
+main_video_path = input('main videopath: ')
 
 
 for e, secs_1 in enumerate(segundos[:-1]):
