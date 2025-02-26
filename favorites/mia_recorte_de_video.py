@@ -24,13 +24,6 @@ tempos = [
 
 # Calcula o total de segundos para cada valor e armazena em uma lista
 segundos = [calcular_segundos(*tempo) for tempo in tempos]
-
-print("Totais de segundos individuais:", segundos)
-
-
-main_video_path = input('main videopath: ')
-
-
 for e, secs_1 in enumerate(segundos[:-1]):
     secs_2 = segundos[e+1]
     name = f"video-{e:02d}.mp4"
